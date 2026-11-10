@@ -1,0 +1,362 @@
+/* Define el diseño general de la página de inicio de sesión */
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 18px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'DM Sans', sans-serif;
+    color: #F5F7FA;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(24, 95, 165, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #03182D 0%,
+            #042C53 55%,
+            #0C447C 100%
+        );
+}
+
+/* Aplica el modelo de caja a los elementos de la página */
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+    box-sizing: border-box;
+}
+
+/* Diseña la tarjeta principal del formulario de inicio de sesión */
+.login-page .login-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    padding: 38px 35px;
+
+    background: rgba(4, 30, 57, 0.96);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    border-radius: 22px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    overflow: hidden;
+
+    animation: loginAppear 0.5s ease both;
+}
+
+/* Añade una línea decorativa dorada en la parte superior de la tarjeta */
+.login-page .login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #C9A84C,
+        #F2D98B,
+        #C9A84C,
+        transparent
+    );
+}
+
+/* Define el tamaño y la apariencia del logotipo */
+.login-page .auth-logo-img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease;
+}
+
+/* Amplía ligeramente el logotipo al pasar el cursor */
+.login-page .auth-logo-img:hover {
+    transform: scale(1.04);
+}
+
+/* Personaliza el título principal del inicio de sesión */
+.login-page .login-container h1 {
+    margin: 0 0 8px;
+    color: #FFFFFF;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+/* Resalta en dorado los fragmentos destacados del título */
+.login-page .login-container h1 span {
+    color: #C9A84C;
+}
+
+/* Estiliza el texto descriptivo del formulario */
+.login-page .login-subtitle {
+    margin: 0 0 30px;
+    color: #B8C9DA;
+
+    font-size: 0.91rem;
+    line-height: 1.6;
+}
+
+/* Da formato al mensaje de error enviado desde PHP */
+.login-page .login-message {
+    margin-bottom: 22px;
+    padding: 12px 14px;
+
+    color: #FFD5D5;
+    background: rgba(190, 45, 45, 0.15);
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Define el ancho y la alineación del formulario */
+.login-page #loginForm {
+    width: 100%;
+    text-align: left;
+}
+
+/* Organiza cada grupo de campos del formulario */
+.login-page .form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+/* Estiliza las etiquetas de los campos de entrada */
+.login-page .form-group label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #E0EAF4;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Define la apariencia de los campos de entrada */
+.login-page .form-group input {
+    display: block;
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 15px;
+
+    font-family: inherit;
+    font-size: 0.94rem;
+    color: #FFFFFF;
+
+    background: #071F38;
+    border: 1px solid #294967;
+    border-radius: 10px;
+    outline: none;
+
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Personaliza el texto de ejemplo dentro de los campos */
+.login-page .form-group input::placeholder {
+    color: #8197AC;
+    opacity: 1;
+}
+
+/* Resalta los campos cuando reciben el foco */
+.login-page .form-group input:focus {
+    background: #092744;
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+/* Reserva espacio para el botón de mostrar contraseña */
+.login-page .form-group .password input {
+    padding-right: 52px;
+}
+
+/* Estiliza el botón para mostrar u ocultar la contraseña */
+.login-page .show-password {
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+
+    width: 36px;
+    height: 35px;
+    padding: 0;
+
+    color: #B8C9DA;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-size: 1.05rem;
+}
+
+/* Cambia el aspecto del botón del ojo al pasar el cursor */
+.login-page .show-password:hover {
+    color: #C9A84C;
+    background: rgba(201, 168, 76, 0.1);
+}
+
+/* Diseña el botón principal para iniciar sesión */
+.login-page .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 51px;
+    margin-top: 8px;
+    padding: 13px 18px;
+
+    color: #071F38;
+    background: linear-gradient(135deg, #D9BB67, #C9A84C);
+    border: 1px solid #E0C978;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 0.96rem;
+    font-weight: 700;
+    text-align: center;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Añade un efecto de elevación al botón principal */
+.login-page .btn:hover {
+    background: linear-gradient(135deg, #E8D28B, #D9BB67);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(201, 168, 76, 0.22);
+}
+
+/* Restablece la posición del botón mientras se presiona */
+.login-page .btn:active {
+    transform: translateY(0);
+}
+
+/* Organiza el separador visual del formulario */
+.login-page .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 28px 0 18px;
+    color: #9FB2C5;
+}
+
+/* Añade líneas a ambos lados del separador */
+.login-page .divider::before,
+.login-page .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #29445F;
+}
+
+/* Estiliza el texto central del separador */
+.login-page .divider span {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Centra el texto que invita a crear una cuenta */
+.login-page .register-link {
+    margin: 0;
+    color: #B8C9DA;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Personaliza el enlace para ir al registro */
+.login-page .register-link a {
+    color: #D9BB67;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Resalta el enlace de registro al pasar el cursor */
+.login-page .register-link a:hover {
+    color: #F2D98B;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Mejora la navegación por teclado en botones y enlaces */
+.login-page .btn:focus-visible,
+.login-page .show-password:focus-visible,
+.login-page .register-link a:focus-visible {
+    outline: 2px solid #F2D98B;
+    outline-offset: 3px;
+}
+
+/* Define la animación de entrada de la tarjeta */
+@keyframes loginAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adapta los espacios y tamaños a pantallas pequeñas */
+@media (max-width: 480px) {
+    .login-page {
+        padding: 20px 13px;
+    }
+
+    /* Reduce el espacio interior de la tarjeta en móviles */
+    .login-page .login-container {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    /* Ajusta el tamaño del logotipo en dispositivos pequeños */
+    .login-page .auth-logo-img {
+        width: 95px;
+        height: 95px;
+    }
+
+    /* Reduce el tamaño del título en móviles */
+    .login-page .login-container h1 {
+        font-size: 1.9rem;
+    }
+
+    /* Ajusta el margen inferior del texto descriptivo */
+    .login-page .login-subtitle {
+        margin-bottom: 25px;
+    }
+}
+
+/* Reduce las animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .login-page *,
+    .login-page *::before,
+    .login-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

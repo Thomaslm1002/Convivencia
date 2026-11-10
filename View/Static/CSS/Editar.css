@@ -1,0 +1,148 @@
+/* Tarjeta principal del formulario */
+.formulario {
+    width: 100%;
+    max-width: 620px;
+    margin: 50px auto;
+    padding: 38px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Título */
+.formulario h2 {
+    margin: 0 0 12px;
+    color: #102a43;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Descripción */
+.formulario p {
+    margin: 0 0 30px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Cada grupo de campo */
+.formulario label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Separación entre los campos */
+.formulario input,
+.formulario textarea,
+.formulario select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin-bottom: 22px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Efecto al seleccionar un campo */
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+    background: #ffffff;
+    border-color: #185fa5;
+    box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.12);
+}
+
+/* Último campo sin margen inferior */
+.formulario input:last-of-type {
+    margin-bottom: 5px;
+}
+
+/* Separación de la zona de botones */
+.formulario .acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Botones */
+.formulario button,
+.formulario .cancelar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 135px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Guardar */
+.formulario button {
+    background: #185fa5;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(24, 95, 165, 0.22);
+}
+
+/* Hover guardar */
+.formulario button:hover {
+    background: #0c447c;
+    transform: translateY(-2px);
+}
+
+/* Cancelar */
+.formulario .cancelar {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+/* Hover cancelar */
+.formulario .cancelar:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Adaptación para celulares */
+@media (max-width: 650px) {
+    .formulario {
+        width: calc(100% - 30px);
+        margin: 30px auto;
+        padding: 28px 22px;
+    }
+
+    .formulario .acciones {
+        flex-direction: column;
+    }
+
+    .formulario button,
+    .formulario .cancelar {
+        width: 100%;
+    }
+}
+
+body {
+    margin-top: -23;
+}

@@ -1,0 +1,194 @@
+
+/* Tabla principal de los CRUD */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    margin-top: 25px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* Encabezados de la tabla */
+th {
+    background: linear-gradient(135deg, #042c53, #0c447c);
+    color: #ffffff;
+    padding: 18px 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border: none;
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 18px 16px;
+    text-align: center;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #edf2f7;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+/* Última fila sin borde */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Efecto de fila */
+tr:hover td {
+    background: #f1f7fd;
+}
+
+/* Primera columna: identificador */
+td:first-child {
+    color: #0c447c;
+    font-weight: 700;
+}
+
+/* Estilo general de los botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 82px;
+    padding: 9px 14px;
+    margin: 3px;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Iconos de los botones */
+.btn ion-icon {
+    font-size: 16px;
+}
+
+/* Botón editar */
+.editar {
+    background: #185fa5;
+    box-shadow: 0 4px 10px rgba(24, 95, 165, 0.25);
+}
+
+/* Hover editar */
+.editar:hover {
+    background: #0c447c;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(24, 95, 165, 0.35);
+}
+
+/* Botón eliminar */
+.eliminar {
+    background: #dc3545;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.22);
+}
+
+/* Hover eliminar */
+.eliminar:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Efecto al presionar un botón */
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Texto de los enlaces dentro de los botones */
+.btn span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Contenedor de la tabla */
+.content {
+    overflow-x: auto;
+}
+
+.admin-table {
+    min-width: 680px;
+}
+
+.admin-table thead th:first-child {
+    width: 78px;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table .btn:focus-visible {
+    outline: 3px solid #8ab8ed;
+    outline-offset: 3px;
+}
+
+/* Apariencia de filas pares */
+tr:nth-child(even) td {
+    background: #fbfdff;
+}
+
+/* Mantiene el efecto hover sobre filas pares */
+tr:nth-child(even):hover td {
+    background: #f1f7fd;
+}
+
+/* Adaptación para tablets */
+@media (max-width: 900px) {
+
+    table {
+        min-width: 700px;
+    }
+
+    th {
+        padding: 15px 12px;
+    }
+
+    td {
+        padding: 15px 12px;
+    }
+
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+
+    table {
+        min-width: 650px;
+    }
+
+    th {
+        font-size: 11px;
+        padding: 13px 10px;
+    }
+
+    td {
+        font-size: 13px;
+        padding: 13px 10px;
+    }
+
+    .btn {
+        min-width: 70px;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+}

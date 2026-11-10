@@ -1,0 +1,273 @@
+/* Define el diseño general de la página de perfil */
+.perfil-page {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 18px;
+    box-sizing: border-box;
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: #F5F7FA;
+    background: radial-gradient(circle at 15% 10%, rgba(24, 95, 165, .22), transparent 35%), linear-gradient(135deg, #03182D, #042C53 55%, #0C447C);
+}
+
+/* Aplica el modelo de caja a todos los elementos del perfil */
+.perfil-page * {
+    box-sizing: border-box;
+}
+
+/* Centra el contenido y limita su ancho máximo */
+.perfil-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Organiza el encabezado de la página */
+.perfil-header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+/* Define las dimensiones y la posición del logotipo */
+.perfil-logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* Estiliza el texto superior del encabezado */
+.perfil-eyebrow {
+    color: #D9BB67;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Personaliza el título principal del perfil */
+.perfil-header h1 {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+/* Define el color y el espaciado de los textos descriptivos */
+.perfil-subtitulo,
+.perfil-descripcion {
+    color: #B8C9DA;
+    line-height: 1.6;
+}
+
+/* Da formato visual a las tarjetas de información y formularios */
+.perfil-card {
+    margin-bottom: 20px;
+    padding: 26px;
+    background: rgba(4, 30, 57, .96);
+    border: 1px solid rgba(201, 168, 76, .3);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+}
+
+/* Personaliza los títulos de las tarjetas */
+.perfil-card h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+    font-size: 1.15rem;
+}
+
+/* Organiza horizontalmente la información de identidad */
+.perfil-identidad {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Ajusta el margen del título de identidad */
+.perfil-identidad h2 {
+    margin: 0 0 6px;
+}
+
+/* Estiliza el texto de identidad y permite dividir correos largos */
+.perfil-identidad p {
+    margin: 0 0 10px;
+    color: #B8C9DA;
+    overflow-wrap: anywhere;
+}
+
+/* Diseña el avatar circular del usuario */
+.perfil-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    color: #071F38;
+    background: linear-gradient(135deg, #E8D28B, #C9A84C);
+    border-radius: 50%;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+/* Resalta la etiqueta del rol de la cuenta */
+.perfil-rol {
+    display: inline-block;
+    padding: 5px 11px;
+    color: #E8D28B;
+    background: rgba(201, 168, 76, .12);
+    border: 1px solid rgba(201, 168, 76, .3);
+    border-radius: 20px;
+    font-size: .78rem;
+}
+
+/* Organiza los campos del formulario en una columna */
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Define la apariencia de las etiquetas de los campos */
+.perfil-form label {
+    margin-top: 8px;
+    color: #E0EAF4;
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+/* Estiliza los campos de entrada del formulario */
+.perfil-form input {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+    background: #071F38;
+    border: 1px solid #294967;
+    border-radius: 9px;
+    outline: none;
+    font: inherit;
+}
+
+/* Resalta los campos de entrada cuando están seleccionados */
+.perfil-form input:focus {
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, .12);
+}
+
+/* Diseña los botones de acción del perfil */
+.perfil-btn {
+    min-height: 47px;
+    margin-top: 14px;
+    padding: 12px 18px;
+    color: #071F38;
+    background: linear-gradient(135deg, #D9BB67, #C9A84C);
+    border: 1px solid #E0C978;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s, filter .2s;
+}
+
+/* Añade un efecto visual al pasar el cursor sobre los botones */
+.perfil-btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+/* Da formato a los mensajes de respuesta del sistema */
+.perfil-mensaje {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+
+/* Identifica visualmente los mensajes de éxito */
+.perfil-mensaje.exito {
+    color: #C5F5D5;
+    background: rgba(36, 140, 82, .15);
+    border: 1px solid rgba(75, 200, 125, .4);
+}
+
+/* Identifica visualmente los mensajes de error */
+.perfil-mensaje.error {
+    color: #FFD5D5;
+    background: rgba(190, 45, 45, .15);
+    border: 1px solid rgba(255, 100, 100, .4);
+}
+
+/* Centra el contenido del pie de página */
+.perfil-footer {
+    padding: 12px 0;
+    text-align: center;
+}
+
+/* Define la apariencia de los enlaces del pie de página */
+.perfil-footer a {
+    color: #D9BB67;
+    text-decoration: none;
+}
+
+/* Cambia el aspecto de los enlaces al pasar el cursor */
+.perfil-footer a:hover {
+    color: #F2D98B;
+    text-decoration: underline;
+}
+
+/* Adapta el diseño del perfil a pantallas pequeñas */
+@media (max-width: 480px) {
+    .perfil-page {
+        padding: 22px 12px;
+    }
+
+    .perfil-card {
+        padding: 20px 17px;
+    }
+
+    .perfil-identidad {
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .perfil-avatar {
+        width: 52px;
+        height: 52px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Posiciona el botón de visibilidad dentro del campo */
+.campo-password {
+    position: relative;
+    width: 100%;
+}
+
+/* Reserva espacio para el botón del ojo */
+.campo-password input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+/* Estiliza el botón para mostrar u ocultar la contraseña */
+.show-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #D9BB67;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Resalta el botón cuando recibe el foco del teclado */
+.show-password:focus-visible {
+    outline: 2px solid #C9A84C;
+    border-radius: 5px;
+}
+

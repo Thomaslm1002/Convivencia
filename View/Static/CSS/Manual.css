@@ -1,0 +1,804 @@
+/* Variables globales de colores, sombras y estilos */
+:root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-muted: #edf3fb;
+    --primary: #102a43;
+    --primary-soft: #1d4e89;
+    --accent: #6fd0c3;
+    --accent-strong: #2da9a0;
+    --amber: #f7b267;
+    --text: #18314f;
+    --muted: #5c7188;
+    --line: rgba(16, 42, 67, 0.12);
+    --shadow: 0 20px 50px rgba(10, 28, 47, 0.12);
+}
+
+/* Configuración general de todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Permite desplazamiento suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Elimina la decoración predeterminada de los enlaces */
+a {
+    text-decoration: none;
+}
+
+/* Ajusta el tamaño de las imágenes */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Hereda la fuente utilizada por los botones */
+button {
+    font: inherit;
+}
+
+/* Contenedor general que centra el contenido */
+.container {
+    width: min(1140px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+
+
+/* Identidad o marca principal del sitio */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Ícono de la marca */
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-soft) 100%);
+    color: white;
+    font-size: 1.05rem;
+}
+
+/* BOTÓN VER MÁS / OCULTAR */
+
+.principios-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.principios-btn-container button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    background: #0C447C;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 15px rgba(12, 68, 124, 0.20);
+}
+
+.principios-btn-container button:hover {
+    background: #185FA5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(12, 68, 124, 0.25);
+}
+
+.principios-btn-container button:active {
+    transform: translateY(0);
+}
+/* ANIMACIÓN AL MOSTRAR  */
+@keyframes mostrarPrincipio {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sección principal de presentación */
+.hero {
+    position: relative;
+    padding: 5.5rem 0 4rem;
+    background: linear-gradient(135deg, #0b1f37 0%, #183a63 40%, #285d8d 100%);
+    color: white;
+    overflow: hidden;
+}
+
+/* Efecto decorativo de fondo de la sección principal */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(111, 208, 195, 0.2), transparent 35%);
+}
+
+/* Distribución del contenido principal de la sección hero */
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Texto pequeño que identifica una sección */
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #e53935;
+}
+
+/* Variante de color del texto eyebrow */
+.eyebrow.accent {
+    color: #e53935;
+}
+
+
+/* Título principal de la sección hero */
+.hero-copy h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+}
+
+/* Descripción de la sección hero */
+.hero-copy p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 1.06rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+/* Contenedor de los botones principales */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Estilo general de los botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto de movimiento al pasar el cursor sobre los botones */
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Estilo del botón principal */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #06273d;
+    box-shadow: 0 15px 30px rgba(45, 169, 160, 0.25);
+}
+
+/* Estilo del botón secundario */
+.btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.28);
+    color: white;
+}
+
+/* Lista de elementos destacados de la sección hero */
+.hero-list {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+}
+
+/* Elementos individuales de la lista hero */
+.hero-list li {
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Contenedor de las tarjetas informativas del hero */
+.hero-panel {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Tarjetas que muestran estadísticas o información */
+.stat-card {
+    padding: 1.5rem;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+}
+
+/* Variante destacada de las tarjetas estadísticas */
+.card-strong {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+}
+
+/* Etiqueta descriptiva de las tarjetas estadísticas */
+.stat-card .label {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Número destacado de las tarjetas estadísticas */
+.stat-card strong {
+    display: block;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1;
+    color: var(--amber);
+}
+
+/* Título de las tarjetas estadísticas */
+.stat-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Descripción de las tarjetas estadísticas */
+.stat-card p {
+    margin: 0;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Espaciado general de las secciones */
+.section {
+    padding: 5.2rem 0;
+}
+
+/* Encabezado de cada sección */
+.section-head {
+    max-width: 620px;
+    margin-bottom: 2rem;
+}
+
+/* Título de las secciones */
+.section-head h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+/* Títulos blancos dentro de secciones claras */
+.light h2 {
+    color: white;
+}
+
+/* Distribución de las tarjetas de características */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Tarjetas que presentan características */
+.feature-card {
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+/* Íconos utilizados en las tarjetas */
+.icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.1rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(16, 42, 67, 0.08), rgba(111, 208, 195, 0.2));
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+/* Títulos de las tarjetas de características */
+.feature-card h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1.2rem;
+}
+
+/* Descripción de las tarjetas de características */
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Sección con fondo oscuro */
+.section-dark {
+    background: linear-gradient(135deg, #102a43 0%, #143d63 100%);
+}
+
+.section-dark .eyebrow.accent {
+    color: #e53935;
+}
+
+/* Distribución de las tarjetas de normas */
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Tarjetas individuales de normas */
+.rule-card {
+    padding: 1.5rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Etiqueta numérica de las normas */
+.rule-tag {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    background: rgba(111, 208, 195, 0.16);
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* Títulos de las tarjetas de normas */
+.rule-card h3 {
+    margin: 0 0 0.65rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Descripciones de las tarjetas de normas */
+.rule-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+/* Distribución de los paneles informativos */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* Paneles de información */
+.info-panel {
+    padding: 1.8rem;
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+/* Variante alternativa de los paneles informativos */
+.info-panel.alt {
+    background: linear-gradient(180deg, rgba(111, 208, 195, 0.12), rgba(255, 255, 255, 0.9));
+}
+
+/* Títulos de los paneles informativos */
+.info-panel h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Listas dentro de los paneles informativos */
+.info-panel ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+/* Espaciado entre elementos consecutivos de la lista */
+.info-panel li + li {
+    margin-top: 0.55rem;
+}
+
+/* Fondo suave para determinadas secciones */
+.section-soft {
+    background: #edf3fb;
+}
+
+/* Contenedor de la línea de tiempo */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* Paso individual de la línea de tiempo */
+.timeline-step {
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+/* Línea que conecta los pasos de la línea de tiempo */
+.timeline-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1.7rem;
+    right: -0.6rem;
+    width: 1.2rem;
+    height: 2px;
+    background: rgba(16, 42, 67, 0.2);
+}
+
+/* Número de cada paso de la línea de tiempo */
+.timeline-step span {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(16, 42, 67, 0.08), rgba(111, 208, 195, 0.2));
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* Títulos de los pasos de la línea de tiempo */
+.timeline-step h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1.2rem;
+}
+
+/* Descripción de los pasos de la línea de tiempo */
+.timeline-step p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Contenedor general de la sección de preguntas frecuentes */
+.faq-wrap {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* Introducción de la sección de preguntas frecuentes */
+.faq-intro {
+    padding-right: 1rem;
+}
+
+/* Título de la sección de preguntas frecuentes */
+.faq-intro h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+/* Lista de preguntas frecuentes */
+.faq-list {
+    display: grid;
+    gap: 0.9rem;
+}
+
+/* Elemento individual de preguntas frecuentes */
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Botón que contiene cada pregunta */
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.2rem 1.3rem;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Signo que aparece al final de cada pregunta */
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--primary-soft);
+}
+
+/* Signo que aparece cuando una pregunta está abierta */
+.faq-item.open .faq-question::after {
+    content: "−";
+}
+
+/* Respuesta oculta de cada pregunta */
+.faq-answer {
+    display: none;
+    padding: 0 1.3rem 1.2rem;
+}
+
+/* Muestra la respuesta cuando la pregunta está abierta */
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+/* Texto de las respuestas */
+.faq-answer p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+/* Espaciado de la sección de llamada a la acción */
+.cta-section {
+    padding: 0 0 4.5rem;
+}
+
+/* Contenedor principal de la llamada a la acción */
+.cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem 2.2rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #102a43 0%, #1d4e89 100%);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+/* Título de la llamada a la acción */
+.cta-box h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.04em;
+}
+
+/* Pie de página del sitio */
+.site-footer {
+    border-top: 1px solid var(--line);
+    background: #edf3fb;
+}
+
+/* Contenedor del contenido del pie de página */
+.footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 80px;
+    color: var(--muted);
+}
+
+/* Nombre o marca dentro del pie de página */
+.footer-wrap span {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+/* Texto del pie de página */
+.footer-wrap p {
+    margin: 0;
+}
+
+
+#principios .feature-card.principio-oculto {
+    display: none !important;
+}
+
+#principios .feature-card.principio-visible {
+    display: block !important;
+}
+
+section#principios .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Adaptación del diseño para pantallas medianas */
+@media (max-width: 980px) {
+
+    /* Reduce las columnas de las cuadrículas */
+    .feature-grid,
+    .rules-grid,
+    .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Organiza en una sola columna el hero y las preguntas frecuentes */
+    .hero-grid,
+    .faq-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adaptación del diseño para dispositivos móviles */
+@media (max-width: 680px) {
+
+    /* Coloca las cuadrículas en una sola columna */
+    .feature-grid,
+    .rules-grid,
+    .info-grid,
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce el espacio superior de la sección hero */
+    .hero {
+        padding-top: 4rem;
+    }
+
+    /* Ajusta el tamaño del título principal en móviles */
+    .hero-copy h1 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+    }
+
+    /* Organiza verticalmente los botones, CTA y pie de página */
+    .hero-actions,
+    .cta-box,
+    .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Reduce el espacio interno de la caja CTA */
+    .cta-box {
+        padding: 1.5rem;
+    }
+}
+
+.calendar-section {
+    padding: 80px 6%;
+    background: #f5f7fa;
+}
+
+/* Encabezado de la sección del calendario */
+.calendar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Contenedor visual del calendario */
+.calendar-container {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Iframe utilizado para mostrar el calendario */
+.calendar-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 600px;
+    height: 700px;
+    border: 0;
+}
+
+/*  TABLET */
+@media (max-width: 900px) {
+    .calendar-section {
+        padding: 60px 4%;
+    }
+    .calendar-header {
+        margin-bottom: 30px;
+    }
+    .calendar-container {
+        padding: 15px;
+        border-radius: 16px;
+    }
+    .calendar-container iframe {
+        height: 650px;
+        min-height: 550px;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    .calendar-section {
+        padding: 45px 15px;
+    }
+    .calendar-header {
+        margin-bottom: 22px;
+    }
+    .calendar-container {
+        padding: 8px;
+        border-radius: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .calendar-container iframe {
+        width: 100%;
+        height: 600px;
+        min-height: 500px;
+        border-radius: 10px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 400px) {
+    .calendar-section {
+        padding: 35px 10px;
+    }
+    .calendar-container {
+        padding: 5px;
+        border-radius: 12px;
+    }
+    .calendar-container iframe {
+        height: 550px;
+        min-height: 450px;
+    }
+}

@@ -1,0 +1,66 @@
+/* Define los márgenes de la sección de gráficas */
+.graficas-seccion {
+    margin: 2rem 0; 
+}
+
+/* Organiza las tarjetas de resumen en una cuadrícula adaptable */
+.graficas-resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Da formato visual a las tarjetas de totales */
+.grafica-total {
+    background: white;
+    border: 1px solid #e5ebf4;
+    border-radius: 16px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 6px 18px rgba(30, 45, 72, .045);
+}
+
+/* Personaliza el número destacado de cada tarjeta */
+.grafica-total .numero {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
+/* Define el estilo de las etiquetas descriptivas */
+.grafica-total .texto {
+    font-size: 12px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Distribuye las gráficas en una cuadrícula adaptable */
+.graficas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Establece el diseño de las tarjetas que contienen gráficas */
+.grafica-card {
+    background: white;
+    border: 1px solid #e5ebf4;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 22px rgba(30, 45, 72, .055);
+}
+
+/* Personaliza los títulos de las tarjetas de gráficas */
+.grafica-card h3 {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+/* Mantiene una altura fija para adaptar Chart.js a pantallas móviles */
+.grafica-lienzo {
+    position: relative;
+    height: 280px;
+}

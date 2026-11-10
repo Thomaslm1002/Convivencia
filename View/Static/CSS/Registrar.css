@@ -1,0 +1,285 @@
+/* Define el diseño general de las páginas de autenticación */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+    background: linear-gradient(135deg, #03182D, #042C53, #0C447C);
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* Establece el tamaño y la apariencia del contenedor de registro */
+.register-container {
+    width: 100%;
+    max-width: 620px;
+    padding: 38px;
+    background: rgba(4, 30, 57, 0.94);
+    border: 1px solid rgba(120, 170, 220, 0.28);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+}
+
+/* Centra el logotipo dentro del formulario */
+.auth-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* Define las dimensiones y el ajuste de la imagen del logotipo */
+.auth-logo-img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* Personaliza los títulos del contenedor de registro */
+.register-container h1,
+.register-container h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Estiliza el texto descriptivo del formulario */
+.register-subtitle {
+    margin: 0 0 28px;
+    color: #64748b;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Organiza verticalmente los campos de cada formulario */
+.register-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+    min-width: 0;
+}
+
+/* Define la apariencia de las etiquetas de los campos */
+.register-container .form-group label {
+    color: #E3EAF3;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Estiliza los campos de entrada del formulario */
+.register-container input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #0B2745;
+    border: 1px solid #294B70;
+    color: #FFFFFF;
+    font: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Resalta los campos de entrada cuando reciben el foco */
+.register-container input:focus {
+    outline: none;
+    background: #103354;
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+/* Personaliza el texto de ejemplo de los campos */
+.register-container input::placeholder {
+    color: #91A8C1;
+}
+
+/* Distribuye los campos en dos columnas adaptables */
+.register-container .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Diseña el botón principal para enviar el formulario */
+.register-container .btn {
+    width: 100%;
+    min-height: 49px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 10px;
+    background: #0C447C;
+    color: #FFFFFF;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* Añade un efecto visual al pasar el cursor sobre el botón principal */
+.register-container .btn:hover {
+    background: #185FA5;
+    transform: translateY(-1px);
+}
+
+/* Da formato al mensaje de error de autenticación */
+.auth-message {
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #8B3B4B;
+    border-radius: 9px;
+    background: #40202A;
+    color: #FFC5CC;
+    font-size: 14px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Organiza el separador entre el formulario y los enlaces */
+.register-container .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 26px 0 18px;
+    color: #C9A84C;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Añade líneas decorativas a ambos lados del separador */
+.register-container .divider::before,
+.register-container .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #294B70;
+}
+
+/* Centra el texto que invita a iniciar sesión */
+.register-container .login-link {
+    margin: 0;
+    color: #E1BD67;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Estiliza el enlace para iniciar sesión */
+.register-container .login-link a {
+    color: #0C447C;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Cambia el aspecto del enlace al pasar el cursor */
+.register-container .login-link a:hover {
+    color: #F3D88F;
+    text-decoration: underline;
+}
+
+/* Centra el enlace para regresar a la página principal */
+.register-container .back-home {
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+    color: #B6C7D9;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* Resalta el enlace de regreso al pasar el cursor */
+.register-container .back-home:hover {
+    color: #FFFFFF;
+}
+
+/* Adapta el formulario a pantallas de hasta 560 píxeles */
+@media (max-width: 560px) {
+    .register-container {
+        padding: 28px 21px;
+        border-radius: 16px;
+    }
+
+    /* Reduce el tamaño del logotipo en dispositivos pequeños */
+    .auth-logo-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Ajusta el tamaño de los títulos en pantallas pequeñas */
+    .register-container h1,
+    .register-container h2 {
+        font-size: 24px;
+    }
+
+    /* Coloca los campos en una sola columna en móviles */
+    .register-container .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+/* Reserva espacio para el botón del ojo en los campos de contraseña */
+.register-container .form-group .password input {
+    padding-right: 52px;
+}
+
+/* Estiliza el botón para mostrar u ocultar la contraseña */
+.register-container .show-password {
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+
+    width: 36px;
+    height: 35px;
+    padding: 0;
+
+    color: #B8C9DA;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-size: 1.05rem;
+}
+
+/* Asegura posicionamiento relativo para alinear los iconos internos */
+.campo-password {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Espacio interno a la derecha para que el texto no tape los iconos */
+.campo-password input[type="password"],
+.campo-password input[type="text"] {
+    width: 100%;
+    padding-right: 70px; /* Deja espacio para el mono y el botón del ojo */
+    box-sizing: border-box;
+}
+
+/* Posicionamiento del mono */
+.monkey-icon {
+    position: absolute;
+    right: 40px; /* Queda justo al lado del botón del ojo */
+    font-size: 1.2rem;
+    pointer-events: none; /* No interfiere con los clics */
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+/* Posicionamiento del botón para mostrar/ocultar */
+.show-password {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #a0aec0;
+}
